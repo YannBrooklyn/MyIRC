@@ -1,0 +1,10 @@
+var middleware = require("../middleware/middleware");
+var privatesController = require('../controller/privates');
+var express = require('express');
+var router = express.Router();
+router.post('/new/privates', middleware.middleware, privatesController.createPrivates);
+router.get('/get/privates/all', middleware.middleware, privatesController.readAllPrivates);
+router.get('/get/privates/:idPrivate', middleware.middleware, privatesController.readOnePrivates);
+router.delete('/delete/privates/:idPrivate', middleware.middleware, privatesController.deleteOnePrivates);
+router.put('/put/privates/:idPrivate', middleware.middleware, privatesController.updateOnePrivates);
+module.exports = router;

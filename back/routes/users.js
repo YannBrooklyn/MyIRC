@@ -1,0 +1,11 @@
+var middleware = require("../middleware/middleware");
+var usersController = require('../controller/users');
+var express = require('express');
+var router = express.Router();
+router.post('/new/users', usersController.createUsers);
+router.get('/get/users/all', usersController.readAllUsers);
+router.get('/get/users/:idUser', usersController.readOneUsers);
+router.delete('/delete/users/:idUser', usersController.deleteOneUsers);
+router.put('/put/users/:idUser', usersController.updateOneUsers);
+router.post('/login/users/', usersController.loginUsers);
+module.exports = router;

@@ -1,0 +1,10 @@
+var privateMessagesController = require('../controller/privatemessages');
+var express = require('express');
+var middleware = require("../middleware/middleware");
+var router = express.Router();
+router.post('/new/pvmessages', privateMessagesController.createPVMessages);
+router.get('/get/pvmessages/all', privateMessagesController.readAllPVMessages);
+router.get('/get/pvmessages/:idPVMsg', privateMessagesController.readOnePVMessages);
+router.delete('/delete/pvmessages/:idPVMsg', privateMessagesController.deleteOnePVMessages);
+router.put('/put/pvmessages/:idPVMsg', privateMessagesController.updateOnePVMessages);
+module.exports = router;
